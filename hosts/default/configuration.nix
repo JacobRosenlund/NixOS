@@ -36,6 +36,17 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
+  environment.sessionVariables = {
+    EDITOR = "vim";
+    DESKTOP = "$HOME/Desktop";
+    DOCUMENTS = "$HOME/Documents";
+    DOWNLOADS = "$HOME/Downloads";
+    MUSIC = "$HOME/Audio";
+    PICTURES = "$HOME/Pictures";
+    TEMPLATES = "$HOME/Templates";
+    VIDEOS = "$HOME/Videos";
+  };
+
   users.users.jacobr = {
     isNormalUser = true;
     description = "Jacob Rosenlund";
@@ -53,6 +64,7 @@
 
   environment.systemPackages = with pkgs; [
     kitty
+    fish
     tmux
     zsh
     neovim
