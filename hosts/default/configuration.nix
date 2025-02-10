@@ -37,7 +37,7 @@
   services.libinput.enable = true;
 
   environment.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
     DESKTOP = "$HOME/Desktop";
     DOCUMENTS = "$HOME/Documents";
     DOWNLOADS = "$HOME/Downloads";
