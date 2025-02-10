@@ -16,14 +16,16 @@
     hyprshot
     libnotify
     swaynotificationcenter
+    pavucontrol
     nautilus
 
     # Fonts
     font-awesome
-    nerd-fonts.symbols-only
+    nerd-fonts.caskaydia-cove
 
     # Terminal
     btop
+    starship
 
     # Password Manager
     _1password-gui
@@ -32,7 +34,10 @@
     brave
   ];
 
+  # Allow Unfree
   nixpkgs.config.allowUnfreePredicate = _: true;
+
+  programs.starship.enable = true;
 
   fonts.fontconfig.enable = true;
 

@@ -18,22 +18,21 @@
   # Time zone
   time.timeZone = "America/Denver";
 
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   # Enable sound.
-  # services.pipewire = {
-  #   pulse.enable = true;
-  # };
-  sound.enable = true;
-  hardware.pulseaudio = {
-    enable = true;
-    package = pkgs.pulseaudioFull;
-    extraConfig = ''
-      load-module module-switch-on-connect
-    '';
+  services.pipewire = {
+    pulse.enable = true;
   };
+  # sound.enable = true;
+  # hardware.pulseaudio = {
+  #   enable = true;
+  #   package = pkgs.pulseaudioFull;
+  #   extraConfig = ''
+  #     load-module module-switch-on-connect
+  #   '';
+  # };
 
   # Bluetooth
   hardware.bluetooth = {
@@ -88,6 +87,9 @@
   # Enable Fish
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
+
+  # Fonts
+  fonts.fontDir.enable = true;
 
   # Make Users
   users.users.jacobr = {
