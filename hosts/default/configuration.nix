@@ -47,6 +47,8 @@
     VIDEOS = "$HOME/Videos";
   };
 
+  programs.fish.enable = true;
+
   users.users.jacobr = {
     isNormalUser = true;
     description = "Jacob Rosenlund";
@@ -70,22 +72,24 @@
     neovim
     fzf
     eza
+    viddy
     git
     gh
     wget
     stow
+    kanata
   ];
 
-  services.greetd = {
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "${pkgs.hyprland}/bin/hyprland";
-	user = "jacobr";
-      };
-      default_session = initial_session;
-    };
-  };
+  # services.greetd = {
+  #   enable = true;
+  #   settings = rec {
+  #     initial_session = {
+  #       command = "${pkgs.hyprland}/bin/hyprland";
+  #       user = "jacobr";
+  #     };
+  #     default_session = initial_session;
+  #   };
+  # };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

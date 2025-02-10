@@ -8,6 +8,8 @@
 
   home.packages = with pkgs; [
     # System Management
+    hyprlock
+    hypridle
     wofi
     waybar
     hyprpaper
@@ -19,6 +21,9 @@
     # Fonts
     font-awesome
     nerd-fonts.symbols-only
+
+    # Terminal
+    btop
 
     # Password Manager
     _1password-gui
@@ -51,7 +56,7 @@
   #  /etc/profiles/per-user/root/etc/profile.d/hm-session-vars.sh
   #
 
-  programs.fish.enable = true;
+  # programs.fish.enable = true;
 
   home.sessionVariables = {
   };
