@@ -8,6 +8,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -17,21 +19,10 @@
         modules = [
           ./hosts/default/configuration.nix
           inputs.home-manager.nixosModules.default
+	  inputs.stylix.nixosModules.stylix
         ];
       };
     };
   };
 
-  # outputs = { nixpkgs, ... }@inputs: let
-  #   system = "x86_64-linux";
-  #   pkgs = nixpkgs.legacyPackages.${system};
-  # in {
-  #   homeConfigurations."jacobr" = home-manager.lib.homeManagerConfiguration {
-  #     inherit pkgs;
-  #     modules = [
-  #       ./home.nix
-  #       ./modules/home-manager
-  #     ];
-  #   };
-  # };
 }

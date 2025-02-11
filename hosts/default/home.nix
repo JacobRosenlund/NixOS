@@ -41,6 +41,19 @@
 
   fonts.fontconfig.enable = true;
 
+  # Cursors
+  # home.pointerCursor = {
+  #   name = "Posy_Cursor_Mono_Black";
+  #   package = pkgs.posy-cursors;
+  #   size = 32;
+  #   gtk.enable = true;
+  # };
+  stylix.cursor = {
+    name = "Posy_Cursor_Mono_Black";
+    package = pkgs.posy-cursors;
+    size = 32;
+  };
+
   home.file = {
   };
 
