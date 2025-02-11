@@ -110,7 +110,7 @@
   #   };
   # };
   stylix.polarity = "dark";
-  stylix.image = ./fall-leaves.jpg;
+  stylix.image = ./backgrounds/fall-leaves.jpg;
 
   # Fonts
   fonts.fontDir.enable = true;
