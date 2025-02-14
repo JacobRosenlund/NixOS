@@ -25,14 +25,6 @@
   services.pipewire = {
     pulse.enable = true;
   };
-  # sound.enable = true;
-  # hardware.pulseaudio = {
-  #   enable = true;
-  #   package = pkgs.pulseaudioFull;
-  #   extraConfig = ''
-  #     load-module module-switch-on-connect
-  #   '';
-  # };
 
   # Bluetooth
   hardware.bluetooth = {
@@ -48,6 +40,7 @@
 
   # Session Variables
   environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = 1;
     EDITOR = "nvim";
     DESKTOP = "$HOME/Desktop";
     DOCUMENTS = "$HOME/Documents";
@@ -90,7 +83,7 @@
 
   # Stylix
   stylix.enable = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/helios.yaml";
   stylix.cursor = {
     package = pkgs.posy-cursors;
     name = "Posy_Cursor_Mono_Black";

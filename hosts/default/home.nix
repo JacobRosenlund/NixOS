@@ -26,6 +26,9 @@
     # Terminal
     btop
     starship
+    python3
+    pnpm
+    nodejs
 
     # Password Manager
     _1password-gui
@@ -42,22 +45,21 @@
   fonts.fontconfig.enable = true;
 
   # Cursors
-  # home.pointerCursor = {
+  # stylix.cursor = {
   #   name = "Posy_Cursor_Mono_Black";
   #   package = pkgs.posy-cursors;
   #   size = 32;
-  #   gtk.enable = true;
   # };
-  stylix.cursor = {
-    name = "Posy_Cursor_Mono_Black";
-    package = pkgs.posy-cursors;
-    size = 32;
-  };
 
   home.file = {
   };
 
   home.sessionVariables = {
+  };
+
+  # Config Nvim
+  xdg.configFile."nvim/" = {
+    source = (pkgs.callPackage ./nvchad/default.nix{}).nvchad;
   };
 
   # Let Home Manager install and manage itself.
