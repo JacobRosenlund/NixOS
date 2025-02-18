@@ -15,6 +15,10 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    rtl88xxau-aircrack
+  ];
+
   # Time zone
   time.timeZone = "America/Denver";
 
@@ -23,7 +27,11 @@
 
   # Enable sound.
   services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enable = true;
   };
 
   # Bluetooth
@@ -33,7 +41,11 @@
   };
   services.blueman.enable = true;
 
-  # Syncthing goes here
+  # File Services
+    # Syncthing goes here
+
+    # GVfs
+    services.gvfs.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
@@ -60,7 +72,7 @@
     kitty
     fish
     tmux
-    zsh
+    wl-clipboard
     neovim
     fzf
     eza
@@ -73,6 +85,73 @@
     nerdfetch
     kanata
   ];
+
+  # Enable kanata
+    # Enable uinput
+    boot.kernelModules = [ "uinput" ];
+    hardware.uinput.enable = true;
+  
+    # Set up udev rules for uinput
+    services.udev.extraRules = ''
+      KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+    '';
+    
+    # Ensure the uinput group exists
+    users.groups.uinput = { };
+
+    # Add the kanata service user to necessary groups
+    systemd.services.kanata-internalKeyboard.serviceConfig = {
+      SupplementaryGroups = [
+        "input"
+        "uinput"
+      ];
+    };
+
+    services.kanata = {
+      enable = true;
+      keyboards = {
+        internalKeyboard = {
+          devices = [
+            "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
+          ];
+          extraDefCfg = "process-unmapped-keys yes";
+          config = ''
+	    (defsrc
+ 	     esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+ 	     grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+ 	     tab  q    w    e    r    t    y    u    i    o    p    [    ]
+ 	     caps a    s    d    f    g    h    j    k    l    ;    '    ret
+ 	     lsft z    x    c    v    b    n    m    ,    .    /    rsft
+ 	     lctl lmet lalt           spc            ralt rmet rctl
+ 	    )
+
+ 	    (defalias
+ 	     cec (tap-hold 100 100 esc lctrl)
+ 	     sym (tap-hold 200 200 tab (layer-toggle alternate))
+	     em (unicode "—")
+ 	    )
+
+ 	    (deflayer default
+ 	     esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+ 	     grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+ 	     @sym q    w    e    r    t    y    u    i    o    p    [    ]
+ 	     @cec a    s    d    f    g    h    j    k    l    ;    '    ret
+ 	     lsft z    x    c    v    b    n    m    ,    .    /    rsft
+ 	     lctl lmet lalt           spc            ralt rmet rctl
+ 	    )
+
+ 	    (deflayer alternate
+ 	     lrld f13  f14  f15  f16  f17  f18  f19  f21  f22  f23  f24  _
+ 	     _    kp1  kp2  kp3  kp4  kp5  kp6  kp7  kp8  kp9  kp0  @em  _    _
+ 	     _    _    _    _    _    _    _    _    _    _    _    _    _
+ 	     caps _    _    _    _    _    left down up   rght _    _    _
+ 	     _    _    _    _    _    _    _    _    _    _    _    _
+ 	     _    _    _              _              _    _    _
+ 	    )	    
+          '';
+        };
+      };
+    };
 
   # Enable Hyprland
   programs.hyprland.enable = true;
@@ -112,7 +191,7 @@
   users.users.jacobr = {
     isNormalUser = true;
     description = "Jacob Rosenlund";
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "audio" "pipewire" ];
     packages = with pkgs; [ 
     ];
   };
@@ -138,7 +217,8 @@
   };
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
+  programs.ssh.startAgent = true;
 
   # networking.firewall.enable = false;
 

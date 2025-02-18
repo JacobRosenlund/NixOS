@@ -18,23 +18,36 @@
     swaynotificationcenter
     pavucontrol
     nautilus
+    appimage-run
 
     # Fonts
     font-awesome
     nerd-fonts.caskaydia-cove
+    noto-fonts
 
     # Terminal
     btop
     starship
     python3
+    sqlite
     pnpm
-    nodejs
+    nodejs_23
+    gcc
 
     # Password Manager
     _1password-gui
 
     # Browser
     brave
+
+    # Image Manipulation
+    gimp
+    vlc
+
+    # Audio
+    audacity
+
+    unzip
   ];
 
   # Allow Unfree
@@ -58,9 +71,9 @@
   };
 
   # Config Nvim
-  xdg.configFile."nvim/" = {
-    source = (pkgs.callPackage ./nvchad/default.nix{}).nvchad;
-  };
+  # xdg.configFile."nvim/" = {
+  #   source = (pkgs.callPackage ./nvchad/default.nix{}).nvchad;
+  # };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
