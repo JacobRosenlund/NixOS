@@ -197,20 +197,6 @@
     package = pkgs.posy-cursors;
     name = "Posy_Cursor_Mono_Black";
   };
-  # stylix.fonts = {
-  #   monospace = {
-  #     package = pkgs.nerd-fonts;
-  #     name = "CaskaydiaCove Nerd Font Mono";
-  #   };
-  #   sansSerif = {
-  #     package = pkgs.nerd-fonts;
-  #     name = "CaskaydiaCove Nerd Font";
-  #   };
-  #   serif = {
-  #     package = pkgs.dejavu_fonts;
-  #     name = "DejaVu Serif";
-  #   };
-  # };
   stylix.polarity = "dark";
   stylix.image = ./backgrounds/fall-leaves.jpg;
 
