@@ -52,7 +52,6 @@
 
     # Image Manipulation
     gimp
-    vlc
 
     # Audio
     audacity
@@ -60,12 +59,29 @@
     # IDE
     vscode
 
+    # Essential Apps
+    vlc
+    sublime
+    qalculate-qt
+    qimgv
+    libreoffice
+
     # Communication
     discord
+    zoom
   ];
 
   # Allow Unfree
   nixpkgs.config.allowUnfreePredicate = _: true;
+
+  # Bluetooth
+  services.mpris-proxy.enable = true;
+
+  # Beautify
+  gtk.iconTheme = {
+    package = pkgs.papirus-icon-theme;
+    name = "Papirus";
+  };
 
   programs.starship.enable = true;
 
