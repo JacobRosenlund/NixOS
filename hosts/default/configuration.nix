@@ -71,9 +71,10 @@
   environment.systemPackages = with pkgs; [
     # System
     wl-clipboard
+    playerctl
     kanata
     usbutils
-    gnumake
+    libinput
 
     # Terminal
     fastfetch
@@ -91,6 +92,7 @@
     stow
     fd
     bat
+    gnumake
 
     # Podman
     dive
