@@ -108,6 +108,14 @@
     };
   };
 
+  # Enable Cron Service
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      ""
+    ];
+  };
+
   # Enable kanata
     # Enable uinput
     boot.kernelModules = [ "uinput" ];
