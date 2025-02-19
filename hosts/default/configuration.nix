@@ -72,8 +72,11 @@
     # System
     wl-clipboard
     kanata
+    usbutils
+    gnumake
 
     # Terminal
+    fastfetch
     kitty
     fish
     tmux
@@ -86,7 +89,6 @@
     gh
     wget
     stow
-    nerdfetch
     fd
     bat
 

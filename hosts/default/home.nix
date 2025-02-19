@@ -19,6 +19,10 @@
     pavucontrol
     nautilus
     appimage-run
+
+    # Archives
+    zip
+    xz
     unzip
     p7zip
 
@@ -35,6 +39,10 @@
     pnpm
     nodejs_23
     gcc
+    ripgrep
+    file
+    which
+    tree
 
     # Password Manager
     _1password-gui
