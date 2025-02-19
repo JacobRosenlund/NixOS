@@ -87,6 +87,8 @@
     wget
     stow
     nerdfetch
+    fd
+    bat
 
     # Podman
     dive
