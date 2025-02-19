@@ -69,10 +69,14 @@
 
   # System Packages
   environment.systemPackages = with pkgs; [
+    # System
+    wl-clipboard
+    kanata
+
+    # Terminal
     kitty
     fish
     tmux
-    wl-clipboard
     neovim
     fzf
     eza
@@ -83,8 +87,24 @@
     wget
     stow
     nerdfetch
-    kanata
+
+    # Podman
+    dive
+    podman-tui
+    podman-compose
+    podman-desktop
+    kubectl
   ];
+
+  # Enable Podman
+  virtualisation.containers.enable = true;
+  virtualisation = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
 
   # Enable kanata
     # Enable uinput
