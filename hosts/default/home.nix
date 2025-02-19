@@ -19,6 +19,8 @@
     pavucontrol
     nautilus
     appimage-run
+    unzip
+    p7zip
 
     # Fonts
     font-awesome
@@ -47,7 +49,11 @@
     # Audio
     audacity
 
-    unzip
+    # IDE
+    vscode
+
+    # Communication
+    discord
   ];
 
   # Allow Unfree
@@ -69,11 +75,6 @@
 
   home.sessionVariables = {
   };
-
-  # Config Nvim
-  # xdg.configFile."nvim/" = {
-  #   source = (pkgs.callPackage ./nvchad/default.nix{}).nvchad;
-  # };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
