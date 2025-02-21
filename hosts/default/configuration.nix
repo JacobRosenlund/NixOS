@@ -14,10 +14,12 @@
   # Network
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+  systemd.network.enable = true;
 
   boot.extraModulePackages = with config.boot.kernelPackages; [
-    rtl88xxau-aircrack
+    rtl8852au
   ];
+  # boot.kernelModules = [ "rtl8852au" ];
 
   # Time zone
   time.timeZone = "America/Denver";
@@ -84,6 +86,7 @@
     neovim
     fzf
     eza
+    zoxide
     viddy
     git
     lazygit
@@ -93,6 +96,7 @@
     fd
     bat
     gnumake
+    bc
 
     # Podman
     dive
@@ -122,7 +126,7 @@
 
   # Enable kanata
     # Enable uinput
-    boot.kernelModules = [ "uinput" ];
+    boot.kernelModules = [ "uinput" "rtl8852au" ];
     hardware.uinput.enable = true;
   
     # Set up udev rules for uinput
