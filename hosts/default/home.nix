@@ -19,6 +19,7 @@
     pavucontrol
     nautilus
     appimage-run
+    gparted
 
     # Archives
     zip
@@ -43,6 +44,7 @@
     file
     which
     tree
+    entr
 
     # Password Manager
     _1password-gui
@@ -69,6 +71,9 @@
     # Communication
     discord
     zoom
+
+    # Misc.
+    rpi-imager
   ];
 
   # Allow Unfree
