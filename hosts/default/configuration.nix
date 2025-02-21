@@ -77,6 +77,7 @@
     kanata
     usbutils
     libinput
+    gparted
 
     # Terminal
     fastfetch

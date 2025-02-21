@@ -19,7 +19,6 @@
     pavucontrol
     nautilus
     appimage-run
-    gparted
 
     # Archives
     zip
@@ -48,6 +47,11 @@
 
     # Password Manager
     _1password-gui
+
+    # Network
+    angryipscanner
+    nmap
+    wireshark
 
     # Browser
     brave
