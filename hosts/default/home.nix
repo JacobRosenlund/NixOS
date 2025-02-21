@@ -35,6 +35,10 @@
     btop
     starship
     python3
+    python3.pkgs.pip
+    uv
+    lua5_1
+    luarocks
     sqlite
     pnpm
     nodejs_23
@@ -92,9 +96,13 @@
     name = "Papirus";
   };
 
-  programs.starship.enable = true;
-
   fonts.fontconfig.enable = true;
+
+  # Enable Zoxide
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   home.file = {
   };

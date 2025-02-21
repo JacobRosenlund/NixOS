@@ -21,6 +21,9 @@
   ];
   # boot.kernelModules = [ "rtl8852au" ];
 
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
+
   # Time zone
   time.timeZone = "America/Denver";
 
@@ -82,12 +85,12 @@
     # Terminal
     fastfetch
     kitty
-    fish
+    zsh
+    zoxide
     tmux
     neovim
     fzf
     eza
-    zoxide
     viddy
     git
     lazygit
@@ -195,9 +198,26 @@
   # Enable Hyprland
   programs.hyprland.enable = true;
 
-  # Enable Fish
-  programs.fish.enable = true;
-  users.defaultUserShell = pkgs.fish;
+  # Enable zsh
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      ls = "eza --icons";
+      la = "eza -a --icons";
+      ntfy-rebuild = "sudo nixos-rebuild switch --flake '/etc/nixos/#default' && curl -d \"✅ Nix rebuild done\" ntfy.sh/NixOS_alerts || curl -d \"⚠️ Nix rebuild failed!\" ntfy.sh/NixOS_alerts";
+      cat = "bat --color=always";
+      cd = "z";
+    };
+
+        
+    # history.size = 10000;
+  };
+  users.defaultUserShell = pkgs.zsh;
+  programs.starship.enable = true;
 
   # Stylix
   stylix.enable = true;
