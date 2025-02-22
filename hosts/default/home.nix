@@ -68,6 +68,7 @@
 
     # IDE
     vscode
+    ghidra
 
     # Essential Apps
     vlc
@@ -82,6 +83,10 @@
 
     # Misc.
     rpi-imager
+
+    # Text Editors
+    sublime
+    obsidian
   ];
 
   # Allow Unfree
