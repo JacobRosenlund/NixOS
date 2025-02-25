@@ -43,11 +43,13 @@
     pnpm
     nodejs_23
     gcc
+    # avrlibc
     ripgrep
     file
     which
     tree
     entr
+    yazi
 
     # Password Manager
     _1password-gui
