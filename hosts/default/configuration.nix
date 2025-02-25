@@ -66,11 +66,13 @@
     PICTURES = "$HOME/Pictures";
     TEMPLATES = "$HOME/Templates";
     VIDEOS = "$HOME/Videos";
+    HYPRSHOT_DIR = "$HOME/Pictures";
   };
 
   # Nixpkgs
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnsupportedSystem = true;
 
   # System Packages
   environment.systemPackages = with pkgs; [
