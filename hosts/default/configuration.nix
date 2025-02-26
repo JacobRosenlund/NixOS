@@ -19,10 +19,9 @@
   boot.extraModulePackages = with config.boot.kernelPackages; [
     rtl8852au
   ];
-  # boot.kernelModules = [ "rtl8852au" ];
 
   services.avahi.enable = true;
-  services.avahi.nssmdns = true;
+  services.avahi.nssmdns4 = true;
 
   # Time zone
   time.timeZone = "America/Denver";
@@ -71,8 +70,6 @@
 
   # Nixpkgs
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnsupportedSystem = true;
 
   # System Packages
   environment.systemPackages = with pkgs; [
