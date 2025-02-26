@@ -35,7 +35,6 @@
     btop
     starship
     python3
-    python3.pkgs.pip
     uv
     lua5_1
     luarocks
@@ -43,6 +42,7 @@
     pnpm
     nodejs_23
     gcc
+    pkgsCross.avr.buildPackages.gcc
     ripgrep
     file
     which
