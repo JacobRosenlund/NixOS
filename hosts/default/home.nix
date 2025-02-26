@@ -43,7 +43,6 @@
     pnpm
     nodejs_23
     gcc
-    # avrlibc
     ripgrep
     file
     which
@@ -74,7 +73,6 @@
 
     # Essential Apps
     vlc
-    sublime
     qalculate-qt
     qimgv
     libreoffice
@@ -87,7 +85,6 @@
     rpi-imager
 
     # Text Editors
-    sublime
     obsidian
   ];
 
