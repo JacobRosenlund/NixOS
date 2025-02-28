@@ -41,14 +41,16 @@
     sqlite
     pnpm
     nodejs_23
-    gcc
-    pkgsCross.avr.buildPackages.gcc
     ripgrep
     file
     which
     tree
     entr
     yazi
+      # C packages
+      gcc
+      pkgsCross.avr.buildPackages.gcc
+      ncurses6
 
     # Password Manager
     _1password-gui
