@@ -5,9 +5,6 @@
     [
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      
-      # Modules
-      ./../../modules/nixos/enable-hardware.nix
     ];
 
   # Use systemd-boot EFI boot loader
@@ -29,8 +26,8 @@
   # Time zone
   time.timeZone = "America/Denver";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # # Enable CUPS to print documents.
+  # services.printing.enable = true;
 
   # # Enable sound.
   # services.pipewire = {
@@ -285,4 +282,5 @@
   system.stateVersion = "24.11";
 
 }
+
 

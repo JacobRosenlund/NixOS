@@ -1,96 +1,101 @@
 { config, pkgs, inputs, ... }:
 
 {
+  imports = 
+    [
+      ./../../modules/home-manager/user-packages.nix
+    ];
+
   home.username = "jacobr";
   home.homeDirectory = "/home/jacobr";
 
   home.stateVersion = "24.11";
 
-  home.packages = with pkgs; [
-    # System Management
-    hyprlock
-    hypridle
-    wofi
-    waybar
-    hyprpaper
-    hyprshot
-    libnotify
-    swaynotificationcenter
-    pavucontrol
-    nautilus
-    appimage-run
+  # home.packages = with pkgs; [
+  #   # System Management
+  #   hyprlock
+  #   hypridle
+  #   wofi
+  #   waybar
+  #   hyprpaper
+  #   hyprshot
+  #   libnotify
+  #   swaynotificationcenter
+  #   pavucontrol
+  #   nautilus
+  #   appimage-run
 
-    # Archives
-    zip
-    xz
-    unzip
-    p7zip
+  #   # Archives
+  #   zip
+  #   xz
+  #   unzip
+  #   p7zip
 
-    # Fonts
-    font-awesome
-    nerd-fonts.caskaydia-cove
-    noto-fonts
+  #   # Fonts
+  #   font-awesome
+  #   nerd-fonts.caskaydia-cove
+  #   noto-fonts
 
-    # Terminal
-    btop
-    starship
-    python3
-    uv
-    lua5_1
-    luarocks
-    sqlite
-    pnpm
-    nodejs_23
-    ripgrep
-    file
-    which
-    tree
-    entr
-    yazi
-      # C packages
-      gcc
-      pkgsCross.avr.buildPackages.gcc
-      ncurses6
+  #   # Terminal
+  #   btop
+  #   starship
+  #   python3
+  #   uv
+  #   lua5_1
+  #   luarocks
+  #   sqlite
+  #   pnpm
+  #   nodejs_23
+  #   ripgrep
+  #   file
+  #   which
+  #   tree
+  #   entr
+  #   yazi
+  #     # C packages
+  #     gcc
+  #     pkgsCross.avr.buildPackages.gcc
+  #     ncurses6
 
-    # Password Manager
-    _1password-gui
+  #   # Password Manager
+  #   _1password-gui
 
-    # Network
-    angryipscanner
-    nmap
-    wireshark
-    rustdesk
+  #   # Network
+  #   angryipscanner
+  #   nmap
+  #   wireshark
+  #   rustdesk
 
-    # Browser
-    brave
+  #   # Browser
+  #   brave
 
-    # Image Manipulation
-    gimp
+  #   # Image Manipulation
+  #   gimp
 
-    # Audio
-    audacity
+  #   # Audio
+  #   audacity
 
-    # IDE
-    vscode
-    ghidra
-    ida-free
+  #   # IDE
+  #   vscode
+  #   ghidra
+  #   ida-free
 
-    # Essential Apps
-    vlc
-    qalculate-qt
-    qimgv
-    libreoffice
+  #   # Essential Apps
+  #   vlc
+  #   qalculate-qt
+  #   qimgv
+  #   libreoffice
 
-    # Communication
-    discord
-    zoom
+  #   # Communication
+  #   discord
+  #   zoom
 
-    # Misc.
-    rpi-imager
+  #   # Misc.
+  #   rpi-imager
 
-    # Text Editors
-    obsidian
-  ];
+  #   # Text Editors
+  #   obsidian
+  # ];
 
   # Allow Unfree
   nixpkgs.config.allowUnfreePredicate = _: true;
@@ -121,3 +126,4 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
+
