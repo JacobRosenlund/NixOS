@@ -5,6 +5,9 @@
     [
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
+      
+      # Modules
+      ./../../modules/nixos/enable-hardware.nix
     ];
 
   # Use systemd-boot EFI boot loader
@@ -16,9 +19,9 @@
   networking.networkmanager.enable = true;
   systemd.network.enable = true;
 
-  boot.extraModulePackages = with config.boot.kernelPackages; [
-    rtl8852au
-  ];
+  # boot.extraModulePackages = with config.boot.kernelPackages; [
+  #   rtl8852au
+  # ];
 
   services.avahi.enable = true;
   services.avahi.nssmdns4 = true;
@@ -29,30 +32,36 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound.
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
+  # # Enable sound.
+  # services.pipewire = {
+  #   enable = true;
+  #   alsa.enable = true;
+  #   alsa.support32Bit = true;
+  #   pulse.enable = true;
+  #   jack.enable = true;
+  # };
 
-  # Bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-  services.blueman.enable = true;
+  # # Bluetooth
+  # hardware.bluetooth = {
+  #   enable = true;
+  #   powerOnBoot = true;
+  # };
+  # services.blueman.enable = true;
 
   # File Services
-    # Syncthing goes here
+    # Syncthing
+    services.syncthing = {
+      enable = true;
+      user = "jacobr";
+      dataDir = "/home/jacobr/";
+      configDir = "/home/jacobr/.config/syncthing";
+    };
 
     # GVfs
     services.gvfs.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
+  # # Enable touchpad support (enabled default in most desktopManager).
+  # services.libinput.enable = true;
 
   # Session Variables
   environment.sessionVariables = {
@@ -80,6 +89,7 @@
     usbutils
     libinput
     gparted
+    winetricks
 
     # Terminal
     fastfetch
@@ -108,6 +118,12 @@
     podman-desktop
     kubectl
   ];
+
+  # Enable Steam
+  programs.steam.enable = true;
+
+  # Enable Wine
+  #programs.wine.enable = true;
 
   # Enable Podman
   virtualisation.containers.enable = true;
@@ -205,8 +221,8 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      ls = "eza --icons";
-      la = "eza -a --icons";
+      ls = "eza --icons=always";
+      la = "eza -a --icons=always";
       ntfy-rebuild = "sudo nixos-rebuild switch --flake '/etc/nixos/#default' && curl -d \"✅ Nix rebuild done\" ntfy.sh/NixOS_alerts || curl -d \"⚠️ Nix rebuild failed!\" ntfy.sh/NixOS_alerts";
       cat = "bat --color=always";
       cd = "z";

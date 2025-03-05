@@ -59,6 +59,7 @@
     angryipscanner
     nmap
     wireshark
+    rustdesk
 
     # Browser
     brave
@@ -72,6 +73,7 @@
     # IDE
     vscode
     ghidra
+    ida-free
 
     # Essential Apps
     vlc
