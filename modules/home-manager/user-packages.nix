@@ -23,6 +23,10 @@
         waybar      # Toolbar
         wofi        # Program launcer
         hyprshot    # Screenshot utilit
+	# Fonts
+	  font-awesome
+	  nerd-fonts.caskaydia-cove
+	  noto-fonts
 
     # Terminal
       btop      # Resource Monitor
