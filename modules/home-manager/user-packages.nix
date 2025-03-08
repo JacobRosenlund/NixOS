@@ -75,6 +75,7 @@
     # Tools
       qalculate-qt  # Calculator
       libreoffice   # FOSS office suite
+      ollama
 
     # Communication
       discord
