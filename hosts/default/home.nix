@@ -12,24 +12,24 @@
   home.stateVersion = "24.11";
 
   # Allow Unfree
-  nixpkgs.config.allowUnfreePredicate = _: true;
+    nixpkgs.config.allowUnfreePredicate = _: true;
 
   # Bluetooth
-  services.mpris-proxy.enable = true;
+    services.mpris-proxy.enable = true;
 
   # Beautify
-  gtk.iconTheme = {
-    package = pkgs.papirus-icon-theme;
-    name = "Papirus";
-  };
+    gtk.iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus";
+    };
 
-  fonts.fontconfig.enable = true;
+    fonts.fontconfig.enable = true;
 
   # Enable Zoxide
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+    programs.zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
 
   home.file = {
   };
@@ -38,6 +38,6 @@
   };
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+    programs.home-manager.enable = true;
 }
 
