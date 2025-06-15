@@ -23,6 +23,9 @@
         waybar      # Toolbar
         wofi        # Program launcer
         hyprshot    # Screenshot utilit
+
+      # System Health
+        qdirstat
 	
   # Fonts
 	  font-awesome
@@ -37,7 +40,11 @@
       which     # Location of executables
       tree      # Directory tree generator
       entr      # Run commands on file change
-      yazi      # Terminal file Manager
+      hexyl     # Hex viewer for terminal
+      # Yazi
+        yazi      # Terminal file Manager
+        yaziPlugins.piper
+
       # C packages
         gcc
         pkgsCross.avr.buildPackages.gcc
