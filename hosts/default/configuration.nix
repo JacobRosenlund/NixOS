@@ -49,6 +49,7 @@
       TEMPLATES = "$HOME/Templates";
       VIDEOS = "$HOME/Videos";
       HYPRSHOT_DIR = "$HOME/Pictures";
+      OLLAMA_HOST = "127.0.0.1:33020";
     };
 
   # Nixpkgs
@@ -84,6 +85,8 @@
         bat
         gnumake
         bc
+        cmake
+        ninja
 
       # Podman
         dive
@@ -95,6 +98,9 @@
 
   # Enable Steam
     programs.steam.enable = true;
+
+  # Enable joycond
+  services.joycond.enable = true;
 
   # Enable Podman
     virtualisation.containers.enable = true;
