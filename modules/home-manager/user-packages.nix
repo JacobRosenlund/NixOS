@@ -23,7 +23,8 @@
         waybar      # Toolbar
         wofi        # Program launcer
         hyprshot    # Screenshot utilit
-	# Fonts
+	
+  # Fonts
 	  font-awesome
 	  nerd-fonts.caskaydia-cove
 	  noto-fonts
@@ -48,7 +49,7 @@
         luarocks
         sqlite
         pnpm
-        nodejs_23
+        nodejs_24
     
     # Password Manager
       _1password-gui
@@ -87,13 +88,13 @@
 
     # IDE
       vscode
-      ida-free
+      cutter
 
     # Text editor
       obsidian
 
     # Misc.
-      rpi-imager
+      # rpi-imager
       retroarch
       chirp
       # googleearth-pro
