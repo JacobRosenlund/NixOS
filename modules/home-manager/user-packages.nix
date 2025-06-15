@@ -61,6 +61,10 @@
 
     # Browser
       brave
+      tor-browser
+
+    # Torrent
+      qbittorrent
 
     # Media
       # Image Packages
@@ -90,6 +94,9 @@
 
     # Misc.
       rpi-imager
+      retroarch
+      chirp
+      # googleearth-pro
   ];
 }
 
