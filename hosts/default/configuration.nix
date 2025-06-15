@@ -205,7 +205,6 @@
         cd = "z";
       };
 
-          
       # history.size = 10000;
     };
     users.defaultUserShell = pkgs.zsh;
@@ -217,6 +216,7 @@
     stylix.cursor = {
       package = pkgs.posy-cursors;
       name = "Posy_Cursor_Mono_Black";
+      size = 24;
     };
     stylix.polarity = "dark";
     stylix.image = ./backgrounds/fall-leaves.jpg;
