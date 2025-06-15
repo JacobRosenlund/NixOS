@@ -43,7 +43,8 @@
       hexyl     # Hex viewer for terminal
       # Yazi File Manager
         yazi
-        yaziPlugins.piper   # Pipe viewer
+        yaziPlugins.piper       # Pipe viewer
+        yaziPlugins.smart-enter # Open files and enter directories
 
       # C packages
         gcc
