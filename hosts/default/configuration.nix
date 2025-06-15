@@ -39,6 +39,7 @@
 
   # Session Variables
     environment.sessionVariables = {
+      XDG_CONFIG_HOME = "$HOME/.config";
       WLR_NO_HARDWARE_CURSORS = 1;
       EDITOR = "nvim";
       DESKTOP = "$HOME/Desktop";
