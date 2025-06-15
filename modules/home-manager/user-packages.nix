@@ -12,7 +12,7 @@
         nautilus  # File Manager
         # Archives
           zip
-          xz
+          # xz
           unzip
           p7zip
       
@@ -94,7 +94,7 @@
       obsidian
 
     # Misc.
-      # rpi-imager
+      rpi-imager
       retroarch
       chirp
       # googleearth-pro
