@@ -41,9 +41,9 @@
       tree      # Directory tree generator
       entr      # Run commands on file change
       hexyl     # Hex viewer for terminal
-      # Yazi
-        yazi      # Terminal file Manager
-        yaziPlugins.piper
+      # Yazi File Manager
+        yazi
+        yaziPlugins.piper   # Pipe viewer
 
       # C packages
         gcc
