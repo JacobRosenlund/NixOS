@@ -42,6 +42,7 @@
       entr      # Run commands on file change
       hexyl     # Hex viewer for terminal
       glow      # Terminal MarkDown renderer
+      miller    # CSV renderer
       yazi      # Terminal File Manager
 
       # C packages
