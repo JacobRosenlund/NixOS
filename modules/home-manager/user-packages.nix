@@ -42,10 +42,7 @@
       entr      # Run commands on file change
       hexyl     # Hex viewer for terminal
       glow      # Terminal MarkDown renderer
-      # Yazi File Manager
-        yazi
-        yaziPlugins.piper       # Pipe viewer
-        yaziPlugins.smart-enter # Open files and enter directories
+      yazi      # Terminal File Manager
 
       # C packages
         gcc
