@@ -65,6 +65,7 @@
         usbutils
         libinput
         gparted
+        wine64
         winetricks
 
       # Terminal
@@ -95,6 +96,7 @@
         podman-compose
         podman-desktop
         kubectl
+        netavark
     ];
 
   # Enable Steam
