@@ -65,7 +65,7 @@
         usbutils
         libinput
         gparted
-        wine64
+        wine
         winetricks
 
       # Terminal
