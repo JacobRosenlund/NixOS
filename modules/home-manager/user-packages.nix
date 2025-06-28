@@ -66,6 +66,7 @@
       nmap            # Network mapper
       wireshark       # Network packet sniffer
       rustdesk        # Remote Desktop
+      angryoxide
 
     # Browser
       brave
@@ -100,10 +101,18 @@
     # Text editor
       obsidian
 
+    # Radio
+      sdrpp
+      gpredict
+
     # Misc.
       rpi-imager
+      rpiboot
       retroarch
       chirp
+      python312Packages.pycryptodome
+      tinyxxd
+      wl-gammarelay-rs
       # googleearth-pro
   ];
 }
