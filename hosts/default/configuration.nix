@@ -14,13 +14,16 @@
   # Network
     networking.hostName = "nixos";
     networking.networkmanager.enable = true;
-    systemd.network.enable = true;
+    # systemd.network.enable = true;
     services.avahi.enable = true;             # multicast DNS and DNS Service Discovery
     services.avahi.nssmdns4 = true;           # Name Service Switch
+    # networking.firewall.enable = false;
+    # networking.useDHCP = false;
+    # services.twingate.enable = true;
 
-  # boot.extraModulePackages = with config.boot.kernelPackages; [
-  #   rtl8852au
-  # ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    rtl88xxau-aircrack
+  ];
 
   # Time zone
     time.timeZone = "America/Denver";
@@ -39,18 +42,21 @@
 
   # Session Variables
     environment.sessionVariables = {
-      XDG_CONFIG_HOME = "$HOME/.config";
-      WLR_NO_HARDWARE_CURSORS = 1;
-      EDITOR = "nvim";
-      DESKTOP = "$HOME/Desktop";
-      DOCUMENTS = "$HOME/Documents";
-      DOWNLOADS = "$HOME/Downloads";
-      MUSIC = "$HOME/Audio";
-      PICTURES = "$HOME/Pictures";
-      TEMPLATES = "$HOME/Templates";
-      VIDEOS = "$HOME/Videos";
-      HYPRSHOT_DIR = "$HOME/Pictures";
-      OLLAMA_HOST = "127.0.0.1:33020";
+      # System Variables
+        XDG_CONFIG_HOME = "$HOME/.config";
+        WLR_NO_HARDWARE_CURSORS = 1;
+        EDITOR = "nvim";
+        DESKTOP = "$HOME/Desktop";
+        DOCUMENTS = "$HOME/Documents";
+        DOWNLOADS = "$HOME/Downloads";
+        MUSIC = "$HOME/Audio";
+        PICTURES = "$HOME/Pictures";
+        TEMPLATES = "$HOME/Templates";
+        VIDEOS = "$HOME/Videos";
+        HYPRSHOT_DIR = "$HOME/Pictures";
+
+      # Ollama Variables
+        OLLAMA_HOST = "127.0.0.1:33020";
     };
 
   # Nixpkgs
@@ -67,6 +73,8 @@
         gparted
         wine
         winetricks
+      	openssl
+        brightnessctl
 
       # Terminal
         fastfetch
@@ -260,7 +268,6 @@
     services.openssh.enable = true;
     programs.ssh.startAgent = true;
 
-  # networking.firewall.enable = false;
 
   system.stateVersion = "24.11";
 
