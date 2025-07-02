@@ -27,11 +27,11 @@
       # System Health
         qdirstat
 	
-  # Fonts
-	  font-awesome
-	  nerd-fonts.caskaydia-cove
-	  noto-fonts
-
+    # Fonts
+  	  font-awesome
+  	  nerd-fonts.caskaydia-cove
+  	  noto-fonts
+  
     # Terminal
       btop      # Resource Monitor
       starship  # Beautify terminal
@@ -44,7 +44,8 @@
       glow      # Terminal MarkDown renderer
       miller    # CSV renderer
       yazi      # Terminal File Manager
-
+      yt-dlp    # Terminal YouTube Toolkit
+  
       # C packages
         gcc
         pkgsCross.avr.buildPackages.gcc
@@ -57,24 +58,24 @@
         sqlite
         pnpm
         nodejs_24
-    
+      
     # Password Manager
       _1password-gui
-
+  
     # Netowork
       angryipscanner  # ip scanner
       nmap            # Network mapper
       wireshark       # Network packet sniffer
       rustdesk        # Remote Desktop
-      angryoxide
-
+      angryoxide      # Network hash sniffer
+  
     # Browser
       brave
       tor-browser
-
+  
     # Torrent
       qbittorrent
-
+  
     # Media
       # Image Packages
         gimp  # Image manipulation
@@ -84,27 +85,27 @@
         audacity    # Audio editor
       # Video
         vlc # Media viewer
-
+  
     # Tools
       qalculate-qt  # Calculator
       libreoffice   # FOSS office suite
       ollama
-
+  
     # Communication
       discord
       zoom-us
-
+  
     # IDE
       vscode
       cutter
-
+  
     # Text editor
       obsidian
-
+  
     # Radio
       sdrpp
       gpredict
-
+  
     # Misc.
       rpi-imager
       rpiboot
@@ -113,6 +114,7 @@
       python312Packages.pycryptodome
       tinyxxd
       wl-gammarelay-rs
+      calibre
       # googleearth-pro
   ];
 }
