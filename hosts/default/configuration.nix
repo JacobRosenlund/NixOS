@@ -20,6 +20,7 @@
     # networking.firewall.enable = false;
     # networking.useDHCP = false;
     # services.twingate.enable = true;
+    services.tailscale.enable = true;
 
   boot.extraModulePackages = with config.boot.kernelPackages; [
     rtl88xxau-aircrack
