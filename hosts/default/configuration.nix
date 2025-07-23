@@ -25,6 +25,7 @@
   boot.extraModulePackages = with config.boot.kernelPackages; [
     rtl88xxau-aircrack
   ];
+  boot.kernelModules = [ "uinput" "rtl8852au" ];
 
   # Time zone
     time.timeZone = "America/Denver";
@@ -66,7 +67,11 @@
   # System Packages
     environment.systemPackages = with pkgs; [
       # System
+        # Desktop
+          inputs.swww.packages.${pkgs.system}.swww
+          eww
         wl-clipboard
+        cliphist
         playerctl
         kanata
         usbutils
@@ -76,6 +81,9 @@
         winetricks
       	openssl
         brightnessctl
+        lm_sensors      # Sensor utility
+        wirelesstools
+        acpi
 
       # Terminal
         fastfetch
@@ -84,6 +92,7 @@
         zoxide
         tmux
         neovim
+        lua-language-server
         fzf
         eza
         viddy
@@ -98,6 +107,7 @@
         bc
         cmake
         ninja
+        jq
 
       # Podman
         dive
@@ -112,7 +122,10 @@
     programs.steam.enable = true;
 
   # Enable joycond
-  services.joycond.enable = true;
+    services.joycond.enable = true;
+
+  # Enable blueman
+    # services.blueman.enable = true;
 
   # Enable Podman
     virtualisation.containers.enable = true;
@@ -134,7 +147,6 @@
 
   # Enable kanata
     # Enable uinput
-      boot.kernelModules = [ "uinput" "rtl8852au" ];
       hardware.uinput.enable = true;
   
     # Set up udev rules for uinput
@@ -195,6 +207,7 @@
  	       _    _    _              _              _    _    _
  	      )	    
             '';
+            extraArgs = [ "--nodelay" ];
           };
         };
       };
@@ -240,7 +253,7 @@
     users.users.jacobr = {
       isNormalUser = true;
       description = "Jacob Rosenlund";
-      extraGroups = [ "wheel" "audio" "pipewire" ];
+      extraGroups = [ "wheel" "audio" "pipewire" "networkmanager" ];
       packages = with pkgs; [ 
       ];
     };
