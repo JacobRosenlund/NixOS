@@ -10,6 +10,8 @@
     };
 
     stylix.url = "github:danth/stylix";
+
+    swww.url = "github:LGFae/swww";
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
