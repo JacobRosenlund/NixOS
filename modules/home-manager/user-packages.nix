@@ -48,8 +48,9 @@
   
       # C packages
         gcc
-        pkgsCross.avr.buildPackages.gcc
+        # pkgsCross.avr.buildPackages.gcc
         ncurses6
+        gdb
       # Languages
         python3
         uv      # Python package manager
@@ -83,6 +84,7 @@
       # Audio
         pavucontrol # Audio controller
         audacity    # Audio editor
+        cava
       # Video
         vlc # Media viewer
   
@@ -104,7 +106,7 @@
   
     # Radio
       sdrpp
-      gpredict
+      # gpredict
   
     # Misc.
       rpi-imager
