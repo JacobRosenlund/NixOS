@@ -23,12 +23,17 @@
     services.tailscale.enable = true;
 
   boot.extraModulePackages = with config.boot.kernelPackages; [
-    rtl88xxau-aircrack
+    rtl8852bu
   ];
-  boot.kernelModules = [ "uinput" "rtl8852au" ];
+  boot.kernelModules = [ "uinput" "rtl8852bu" ];
+  #hardware.enableAllFirmware = true;
 
   # Time zone
     time.timeZone = "America/Denver";
+
+  # OpenGL
+    hardware.opengl.enable = true;
+    services.xserver.videoDrivers = [ "intel" ];
 
   # File Services
     # Syncthing
@@ -64,6 +69,8 @@
   # Nixpkgs
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  programs.nix-ld.enable = true;
+
   # System Packages
     environment.systemPackages = with pkgs; [
       # System
@@ -84,6 +91,8 @@
         lm_sensors      # Sensor utility
         wirelesstools
         acpi
+        turbovnc
+        #tigervnc
 
       # Terminal
         fastfetch
@@ -108,6 +117,7 @@
         cmake
         ninja
         jq
+        ffmpeg
 
       # Podman
         dive
@@ -221,6 +231,10 @@
       enableCompletion = true;
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
+
+      interactiveShellInit = ''
+        export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
+      '';
 
       shellAliases = {
         ls = "eza --icons=always";
