@@ -45,6 +45,7 @@
       miller    # CSV renderer
       yazi      # Terminal File Manager
       yt-dlp    # Terminal YouTube Toolkit
+      platformio
   
       # C packages
         gcc
@@ -87,11 +88,18 @@
         cava
       # Video
         vlc # Media viewer
+        obs-studio
+        libsForQt5.kdenlive # Video Editor
   
     # Tools
       qalculate-qt  # Calculator
       libreoffice   # FOSS office suite
       ollama
+
+    # Modeling
+      #blender
+      #freecad-wayland
+      kicad
   
     # Communication
       discord
