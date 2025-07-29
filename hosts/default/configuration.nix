@@ -26,7 +26,6 @@
     rtl8852bu
   ];
   boot.kernelModules = [ "uinput" "rtl8852bu" ];
-  #hardware.enableAllFirmware = true;
 
   # Time zone
     time.timeZone = "America/Denver";
@@ -92,7 +91,6 @@
         wirelesstools
         acpi
         turbovnc
-        #tigervnc
 
       # Terminal
         fastfetch
