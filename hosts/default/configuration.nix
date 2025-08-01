@@ -31,7 +31,7 @@
     time.timeZone = "America/Denver";
 
   # OpenGL
-    hardware.opengl.enable = true;
+    hardware.graphics.enable = true;
     services.xserver.videoDrivers = [ "intel" ];
 
   # File Services

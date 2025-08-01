@@ -70,6 +70,7 @@
       wireshark       # Network packet sniffer
       rustdesk        # Remote Desktop
       angryoxide      # Network hash sniffer
+      protonvpn-gui
   
     # Browser
       brave
@@ -90,6 +91,8 @@
         vlc # Media viewer
         obs-studio
         libsForQt5.kdenlive # Video Editor
+      # Reader
+        koreader
   
     # Tools
       qalculate-qt  # Calculator
