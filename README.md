@@ -1,7 +1,7 @@
 # My [NixOS](https://nixos.org/download/) Config
 <kbd>***NixOS Config Status***: *Incomplete*</kbd>
 
-Welcome to my NixOS Config! It represents the total aggregate of my NixOS knowledge after I began using it on February 9th, 2025. Since then, my config has gone through several stages of cluttering and de-cluttering, reorganization and neglection until it arrived at the state it is in today. As of right now, it is—and will likely remain—an active config.
+Welcome to my NixOS Config! It represents the aggregate sum of my NixOS knowledge after I began using it on February 9th, 2025. Since then, my config has gone through several stages of cluttering and de-cluttering, reorganization and neglection until it arrived at the state it is in today. As of right now, it is—and will likely remain—an active config.
 
 > [!note]
 > This is <ins>*my*</ins> NixOS Config. It’s not perfect, but that’s what I like about it. As I learn and develop my system, these files will change frequently.<br>Right now, I am a “learner;” I hope to eventually become “learned.”
@@ -95,7 +95,8 @@ flowchart LR
 
 [^1]: Often they remain incomplete (*thanks ADHD*), or I flat-out forget them. Often this results in mysterious conflicts that can take hours to track down.
 
-[^2]: I haven’t verified, but I imagine that installing the same package as a system-package and a user-package would possibly result in not good things. In addition, there are a few packages that can be “enabled” instead of installed. I’m also unsure of what would happen if you install a “package version” of a program that you have *enabled.*
+[^2]: I haven’t verified, but I imagine that installing the same package as a `system-package` and a `user-package` would possibly result in not good things. In addition, there are a few packages that can be “enabled” instead of installed. I’m also unsure of what would happen if you install the “package version” of a program that you have *enabled.*
 
 [^3]: This way each unique host can utilize the benefits of separating out each “function” into distinct modules. For example, a “default” host can have all the necessities installed and a “art” host can have many of the same features as the “default” host with the addition of other programs.
+
 
