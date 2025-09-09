@@ -1,43 +1,25 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports = 
-    [
-      ./../../modules/home-manager/user-packages.nix
-    ];
+  imports = [
+    (modulePath + "/modules/packages/user-packages.nix")
+  ];
 
   home.username = "jacobr";
-  home.homeDirectory = "/home/jacobr";
+  home.homeDirectory = "/home/jacobr/"
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.11";
 
-  # Allow Unfree
-    nixpkgs.config.allowUnfreePredicate = _: true;
-
-  # Bluetooth
-    services.mpris-proxy.enable = true;
-
-  # Beautify
-    gtk.iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus";
-    };
-
-    fonts.fontconfig.enable = true;
-
-  # Enable Zoxide
-    programs.zoxide = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-
-  home.file = {
+  gtk.iconTheme = {
+    package = pkgs.papirus-icon-theme;
+    name = "Papirus";
   };
 
-  home.sessionVariables = {
-  };
+  fonts.fontconfig.enable = true;
+  
+  home.file = {};
 
-  # Let Home Manager install and manage itself.
-    programs.home-manager.enable = true;
+  home.sessionVariables = {};
+
+  programs.home-manager.enable = true;  # Let HM install and manage itself
 }
-
