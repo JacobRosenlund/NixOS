@@ -1,34 +1,25 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  # Checklist: ([ ] = not done; [x] = done; [?] = maybe done / need more research)
-    # [?] Bootloader
-    # [?] Network
-    #   [x] Base-config
-    #   [x] Firewall Options
-    #   [x] VPN Options
-    #   [?] Add piHole?
-    # [?] Add ntp?
-    # [x] Graphics
-    # [x] Syncthing
-    # [x] Kanata
-
   imports = [
     ./hardware-configuration.nix
     ./sessionVariables.nix
     ./stylix.nix
     ./system-packages.nix
-    (modulesPath + "/nixos/network/config.nix")
-    (modulesPath + "/nixos/syncthing.nix")
-    (modulesPath + "/nixos/cron.nix")
+    ./user-packages.nix
     (modulesPath + "/nixos/kanata/config.nix")
-    (modulesPath + "/nixos/zsh.nix")
-    (modulesPath + "/nixos/zoxide.nix")
     (modulesPath + "/nixos/neovim/config.nix")
+    (modulesPath + "/nixos/network/config.nix")
     (modulesPath + "/nixos/bluetooth.nix")
-    (modulesPath + "/nixos/users.nix")
+    (modulesPath + "/nixos/cron.nix")
     (modulesPath + "/nixos/hyprland.nix")
     (modulesPath + "/nixos/ssh.nix")
+    (modulesPath + "/nixos/syncthing.nix")
+    (modulesPath + "/nixos/users.nix")
+    (modulesPath + "/nixos/virtualisation.nix")
+    (modulesPath + "/nixos/vpn.nix")
+    (modulesPath + "/nixos/zoxide.nix")
+    (modulesPath + "/nixos/zsh.nix")
   ];
 
   # Boot loader
