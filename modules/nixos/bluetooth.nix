@@ -1,41 +1,26 @@
 { config, lib, pkgs, inputs, ...}:
 
 {
-  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
     pulse.enable = true;
-
-    wireplumber = {
-      enable = true;
-      extraConfig."10-bluez" = {
-        "monitor.bluez.properties" = {
-          "bluez5.enable-sbc-xq" = true;
-          "bluez5.enable-msbc" = true;
-          "bluez5.enable-hw-volume" = true;
-          "bluez5.roles" = [
-            "hsp_hs"
-            "hsp_ag"
-            "hfp_hf"
-            "hfp_ag"
-          ];
-        };
-      };
-    };
+    alsa.enable = true;
+    jack.enable = false;
   };
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
     settings = {
       General = {
-        Enable = "Source,Sink,Media,Socket";
         Experimental = true;
+        FastConnectable = true;
+      };
+      Policy = {
+        AutoEnable = true;
       };
     };
   };
-  # hardware.enableAllFirmware = true;
-  services.blueman.enable = true; # Graphical bluetooth utility
-  environment.systemPackages = with pkgs; [ bluez ];
+
+  services.blueman.enable = true;
 }
