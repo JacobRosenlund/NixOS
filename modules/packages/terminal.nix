@@ -20,6 +20,7 @@
       lazygit   # Git manager
       fd        # Replace `find`
       starship  # Beautify terminal
+      tinyxxd     # vim hex dump replacement
 
     # Tools (Useful terminal tools)
       tmux        # Terminal multiplexer
@@ -39,5 +40,6 @@
       yt-dlp      # Terminal YouTube toolkit
       platformio  # Embedded software toolkit
       esphome     # ESP32 HomeAssistant toolkit
+      jq          # `sed` for JSON
   ];
 }
