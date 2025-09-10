@@ -18,6 +18,7 @@
     ../../modules/packages/system-packages/rpi.nix
     ../../modules/packages/system-packages/system-build.nix
     ../../modules/packages/system-packages/system-health.nix
+    ../../modules/packages/system-packages/browser.nix
     ../../modules/packages/system-packages/torrent.nix
   ];
 
