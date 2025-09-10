@@ -10,4 +10,5 @@
       UseDns = true;
     };
   };
+  programs.ssh.startAgent = true;
 }
