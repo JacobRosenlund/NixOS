@@ -8,7 +8,7 @@
 
   # General Network
     networking.hostName = "nixos";            # This system's hostname
-    networking.networkManager.enable = true;  # System for configurng network
+    networking.networkmanager.enable = true;  # System for configurng network
     services.avahi.enable = true;             # mDNS Service
     services.avahi.nssmdns4= true;            # Allows `.local` usage
 

@@ -2,7 +2,6 @@
 
 {
   environment.sessionVariables = {
-    NIX_PATH = "/etc/nixos/modules/";
     XDG_CONFIG_HOME = "$HOME/.config";
     WLR_NO_HARDWARE_CURSORS = 1;
     DESKTOP = "$HOME/Desktop";

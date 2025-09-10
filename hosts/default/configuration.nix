@@ -1,25 +1,24 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, modulesPath, ... }:
 
 {
   imports = [
     ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+    ../../modules/nixos/users.nix
     ./sessionVariables.nix
     ./stylix.nix
     ./system-packages.nix
-    ./user-packages.nix
-    (modulesPath + "/nixos/kanata/config.nix")
-    (modulesPath + "/nixos/neovim/config.nix")
-    (modulesPath + "/nixos/network/config.nix")
-    (modulesPath + "/nixos/bluetooth.nix")
-    (modulesPath + "/nixos/cron.nix")
-    (modulesPath + "/nixos/hyprland.nix")
-    (modulesPath + "/nixos/ssh.nix")
-    (modulesPath + "/nixos/syncthing.nix")
-    (modulesPath + "/nixos/users.nix")
-    (modulesPath + "/nixos/virtualisation.nix")
-    (modulesPath + "/nixos/vpn.nix")
-    (modulesPath + "/nixos/zoxide.nix")
-    (modulesPath + "/nixos/zsh.nix")
+    ../../modules/nixos/kanata/config.nix
+    ../../modules/nixos/neovim/config.nix
+    ../../modules/nixos/network/config.nix
+    ../../modules/nixos/bluetooth.nix
+    ../../modules/nixos/cron.nix
+    ../../modules/nixos/hyprland.nix
+    ../../modules/nixos/ssh.nix
+    ../../modules/nixos/syncthing.nix
+    ../../modules/nixos/virtualisation.nix
+    ../../modules/nixos/zoxide.nix
+    ../../modules/nixos/zsh.nix
   ];
 
   # Boot loader
@@ -45,6 +44,19 @@
 
   # Fonts
     fonts.fontDir.enable = true;
+
+  # Users
+    users.users.jacobr = {
+      isNormalUser = true;
+      description = "Jacob Rosenlund";
+      extraGroups = [ "wheel" "audio" "networkmanager" ];
+      packages = with pkgs; [  ];
+    };
+
+    home-manager = {
+      extraSpecialArgs = { inherit inputs; };
+      users.jacobr = ./home.nix;
+    };
 
   system.stateVersion = "25.11";
 }

@@ -1,13 +1,21 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, modulesPath, ... }:
 
 {
   imports = [
-    (modulePath + "/modules/packages/user-packages.nix")
+    ../../modules/packages/user-packages/creative.nix
+    ../../modules/packages/user-packages/communication.nix
+    ../../modules/packages/user-packages/fonts.nix
+    ../../modules/packages/user-packages/games.nix
+    ../../modules/packages/user-packages/media.nix
+    ../../modules/packages/user-packages/password-manager.nix
+    ../../modules/packages/user-packages/reader.nix
+    ../../modules/packages/user-packages/window-manager.nix
+
   ];
 
   home.username = "jacobr";
-  home.homeDirectory = "/home/jacobr/"
-
+  home.homeDirectory = "/home/jacobr";
+  
   home.stateVersion = "25.11";
 
   gtk.iconTheme = {
@@ -21,5 +29,8 @@
 
   home.sessionVariables = {};
 
+  services.mpris-proxy.enable = true; # Control media players with bt devices
+
   programs.home-manager.enable = true;  # Let HM install and manage itself
+
 }

@@ -21,5 +21,5 @@
   };
   
   users.defaultUserShell = pkgs.zsh;
-  programs.starship.enable;
+  programs.starship.enable = true;
 }

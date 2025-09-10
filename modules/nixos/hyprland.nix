@@ -1,7 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  program.hyprland.enable = true;
+  programs.hyprland.enable = true;
   
   # Launch to hyprland
     services.greetd = {
@@ -13,5 +13,5 @@
         };
         default_session = initial_session;
       };
-    }
+    };
 }

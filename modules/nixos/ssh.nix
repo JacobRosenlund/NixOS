@@ -1,7 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  services.openssh.enable = {
+  services.openssh = {
     enable = true;
     ports = [ 22 ];
     settings = {
