@@ -14,4 +14,7 @@
   };
   # hardware.enableAllFirmware = true;
   services.bleuman.enable = true; # Graphical bluetooth utility
+  services.mpris-proxy.enable = true; # Control media players with bt devices
+
+  environment.systemPackages = with pkgs; [ bluez ];
 }
