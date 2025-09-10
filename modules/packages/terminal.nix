@@ -7,6 +7,7 @@
       # zsh             # System Shell
       stow            # Manage dotfiles
       git             # Manage github repos
+      gh              # guithub cli
       wget            # Network retriever
       man-pages       # General manual pages
       man-pages-posix # Posix manual man-pages
