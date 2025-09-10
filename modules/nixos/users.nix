@@ -4,7 +4,7 @@
   users.users.jacobr = {
     isNormalUser = true;
     description = "Jacob Rosenlund";
-    extraGroups = [ "wheel" "audio" "pipewire" "networkmanager" "vboxusers" ];
+    extraGroups = [ "wheel" "audio" "pipewire" "networkmanager" ];
     packages = with pkgs; [  ];
   };
 
