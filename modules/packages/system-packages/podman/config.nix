@@ -1,6 +1,8 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
+  imports = [ ./containers.nix ];
+
   virtualisation.containers.enable = true;
   virtualisation = {
     podman = {
