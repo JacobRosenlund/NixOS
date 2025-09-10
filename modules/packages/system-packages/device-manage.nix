@@ -7,7 +7,7 @@
     libinput          # Wayland input device handler
     brightnessctl     # Brightness control utility
     wl-gammarelay-rs  # Control display gamma
-    lmsensors         # Hardware sensor utility
+    lm_sensors        # Hardware sensor utility
     acpi              # Batter status and ACPI info
     wirelesstools     # Tools like `iwconfig`
   ];
