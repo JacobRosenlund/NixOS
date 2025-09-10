@@ -98,6 +98,3 @@ flowchart LR
 [^2]: After optimizing my config, I have found that installing the same package as a `system-package` and a `user-package` result in not good things. There are also a few packages that can be “enabled” instead of installed. I’m unsure of what would happen if you install the “package version” of a program that you have *enabled.*
 
 [^3]: This way each unique host can utilize the benefits of separating out each “function” into distinct modules. For example, a “default” host can have all the necessities installed and a “art” host can have many of the same features as the “default” host with the addition of other programs.
-
-
-
