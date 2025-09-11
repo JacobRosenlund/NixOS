@@ -19,82 +19,32 @@ The structure of *this here config* is subject to frequent changes. In fact, the
 flowchart LR
 	hosts([**hosts**]) --- default([**default**])
 	default --- backgrounds([**backgrounds**])
-	default --- default_files(
-		configuration.nix
-		hardware-configuration.nix
-		sessionVariables.nix
-		stylix.nix
-		system-packages.nix
-		user-packages.nix
-	)
-	backgrounds --- backgrounds_files(
-		starryboat.gif
-		starryboat.jpg
-	)
+	default --- default_files(Has all the files necessary to create a new host.)
+	backgrounds --- backgrounds_files(Contains my desktop backgrounds \(these can be set per host\).)
 	
 	modules([**modules**]) --- nixos([**nixos**])
 	nixos --- kanata([**kanata**])	
 	nixos --- neovim([**neovim**])
 	nixos --- network([**network**])
-	nixos --- nixos_files(
-		bluetooth.nix
-		cron.nix
-		hyprland.nix
-		ssh.nix
-		syncthings.nix
-		users.nix
-		vpn.nix
-		zoxide.nix
-		zsh.nix
-	)
-	kanata --- kanata_files(
-		config.nix
-		kanata.kbd
-	)
-	neovim --- neovim_files(
-		config.nix
-	)
-	network --- network_files(
-		asus-usbax56.nix
-		config.nix
-	)
+	nixos --- nixos_files(Is home to files that impact the system more than a package would.)
+	kanata --- kanata_files(My Kanata configs live here. *Essential for productivity!*)
+	neovim --- neovim_files(Just houses my neovim config)
+	network --- network_files(Configurations for my network)
 	
 	modules --- packages([**packages**])
 	packages --- languages([**languages**])
 	packages --- system-packages([**system-packages**])
 	packages --- user-packages([**user-packages**])
-	languages --- languages_files(
-		cpp.nix
-		java.nix
-		javascript.nix
-		lua.nix
-		python.nix
-		sql.nix
-	)
-	system-packages --- system-packages_files(
-		browser.nix
-		clipboard.nix
-		device-manage.nix
-		network.nix
-		torrent.nix
-	)
-	user-packages --- user-packages_files(
-		communication.nix
-		creative.nix
-		file-managers.nix
-		fonts.nix
-		media.nix
-		modeling.nix
-		password-manager.nix
-		window-manager.nix
-	)
+	languages --- languages_files(Packges related to specific languages. They are split into language-specific directories for readability.)
+	system-packages --- system-packages_files(Packages that should be installed as "root" packages.)
+	user-packages --- user-packages_files(Packages that can be installed as "user" packages.)
 		
 	classDef leftAlign text-align:left;
 	class default_files,backgrounds_files,nixos_files,kanata_files,neovim_files,network_files,languages_files,system-packages_files,user-packages_files leftAlign;
 ```
 
-[^1]: Often they remain incomplete (*thanks ADHD*), or I flat-out forget them. Often this results in mysterious conflicts that can take hours to track down.
+[^1]: Often these configurations remain incomplete (*thanks ADHD*), or I flat-out forget about them. This tends to result in mysterious conflicts that can take hours to track down.
 
-[^2]: After optimizing my config, I have found that installing the same package as a `system-package` and a `user-package` result in not good things. There are also a few packages that can be “enabled” instead of installed. I’m unsure of what would happen if you install the “package version” of a program that you have *enabled.*
+[^2]: After optimizing my config, I have found that installing the same package as a `system-package` and a `user-package` results in not good things. There also are a few packages that can be “*enabled*” instead of *installed*. I’m unsure of what would happen if you install the “package version” of a program that you have *enabled.*
 
 [^3]: This way each unique host can utilize the benefits of separating out each “function” into distinct modules. For example, a “default” host can have all the necessities installed and a “art” host can have many of the same features as the “default” host with the addition of other programs.
