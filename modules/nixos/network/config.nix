@@ -15,6 +15,7 @@
        enable = true;        # mDNS Service
        nssmdns4 = true;      # Allows `.local` usage
        openFirewall = true;  # Opens port for mDNS
+       # interfaces = [ ];
      };
 
 
