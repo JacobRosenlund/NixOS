@@ -40,7 +40,7 @@
   # Nixpkgs
     nixpkgs.config.allowUnfree = true;
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
-    # programs.nix-ld.enable = true;
+    programs.nix-ld.enable = true; # Needed for Modrinth
 
   # Fonts
     fonts.fontDir.enable = true;
