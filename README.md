@@ -20,7 +20,7 @@ flowchart LR
 	hosts([**hosts**]) --- default([**default**])
 	default --- backgrounds([**backgrounds**])
 	default --- default_files(Has all the files necessary to create a new host.)
-	backgrounds --- backgrounds_files(Contains my desktop backgrounds \(these can be set per host\).)
+	backgrounds --- backgrounds_files(Contains my desktop backgrounds. *These can be set per host*.)
 	
 	modules([**modules**]) --- nixos([**nixos**])
 	nixos --- kanata([**kanata**])	
