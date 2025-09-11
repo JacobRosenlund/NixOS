@@ -26,8 +26,8 @@
     boot.loader.efi.canTouchEfiVariables = true;
 
   # Time
-    # networking.timeServers = options.networking.timeServers.default ++ [ "ntp.example.com" ]; 
-    # services.ntp.enable = true;
+    networking.timeServers = [ "0.north-america.pool.ntp.org" ]; 
+    services.ntp.enable = true;
     time.timeZone = "America/Denver";
   
   # Graphics
