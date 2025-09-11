@@ -4,6 +4,7 @@
   imports = [
     ./asus-usbax56.nix
     ./vpn.nix
+    ./i2p.nix
   ];
 
   # General Network
@@ -26,6 +27,6 @@
      # - 9090 = Minecraft
      # - 22 = SSH
      networking.firewall.enable = true;
-     networking.firewall.allowedTCPPorts = [ 53 80 8580 9090 22 ];
+     networking.firewall.allowedTCPPorts = [ 53 80 8580 9090 22  ];
      networking.firewall.allowedUDPPorts = [ 53 9090 ];
 }
