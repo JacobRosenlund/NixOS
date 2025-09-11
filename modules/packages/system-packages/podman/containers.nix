@@ -6,7 +6,6 @@
     nginx-proxy-manager = {
       image = "jc21/nginx-proxy-manager:latest";
       autoStart = true;
-      ports = [ "80:80" "81:81" "433:433" ];
       extraOptions = [ "--network=host" ];
       volumes = [
         "/var/lib/nginx-proxy-manager/data:/data"
@@ -29,6 +28,23 @@
         SPEEDTEST_SCHEDULE = "*/10 * * * *";
         PUBLIC_DASHBOARD = "true";
       };
+    };
+
+    pihole = {
+      image = "pihole/pihole:latest";
+      autoStart = true;
+      environment = {
+        TZ = "America/Denver";
+        WEBPASSWORD = "pihole";
+        DNSMASQ_LISTENING = "all";
+        WEB_PORT = "8081";
+      };
+      volumes = [
+        "/var/lib/pihole/data:/etc/pihole"
+        "/var/lib/pihole/dnsmasq.d:/dnsmasq.d"
+      ];
+      extraOptions = [ "--network=pihole-net" ];
+      ports = [ "127.0.0.1:8081:80" "127.0.0.1:53:53/tcp" "127.0.0.1:53:53/udp" ];
     };
   };
 }
