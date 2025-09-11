@@ -7,22 +7,24 @@
   ];
 
   # General Network
-    networking.hostName = "nixos";            # This system's hostname
-    networking.networkmanager.enable = true;  # System for configurng network
-    services.avahi = {
-      enable = true;        # mDNS Service
-      nssmdns4 = true;      # Allows `.local` usage
-      openFirewall = true;  # Opens port for mDNS
-    };
+     networking.hostName = "nixos";            # This system's hostname
+     networking.networkmanager.enable = true;  # System for configurng network
+     networking.nameservers = [ "127.0.0.1" ];
+     services.resolved.enable = false;
+     services.avahi = {
+       enable = true;        # mDNS Service
+       nssmdns4 = true;      # Allows `.local` usage
+       openFirewall = true;  # Opens port for mDNS
+     };
 
 
   # Firewall options
-    # Allowing:
-    # - 80 = nginx
-    # - 8580 = Calibre
-    # - 9090 = Minecraft
-    # - 22 = SSH
-    networking.firewall.enable = true;
-    networking.firewall.allowedTCPPorts = [ 80 8580 9090 22 ];
-    networking.firewall.allowedUDPPorts = [ 9090 ];
+     # Allowing:
+     # - 80 = nginx
+     # - 8580 = Calibre
+     # - 9090 = Minecraft
+     # - 22 = SSH
+     networking.firewall.enable = true;
+     networking.firewall.allowedTCPPorts = [ 53 80 8580 9090 22 ];
+     networking.firewall.allowedUDPPorts = [ 53 9090 ];
 }
