@@ -3,6 +3,18 @@
 {
   virtualisation.oci-containers.backend = "podman";
   virtualisation.oci-containers.containers = {
+    nginx-proxy-manager = {
+      image = "jc21/nginx-proxy-manager:latest";
+      autoStart = true;
+      ports = [ "80:80" "81:81" "433:433" ];
+      extraOptions = [ "--network=host" ];
+      volumes = [
+        "/var/lib/nginx-proxy-manager/data:/data"
+        "/var/lib/nginx-proxy-manager/letsencrypt:/etc/letsencrypt"
+        "/var/lib/nginx-proxy-manager/98-themepark-npm:/etc/cont-init.d/99-themepark"
+      ];
+    };
+
     speedtest-tracker = {
       image = "lscr.io/linuxserver/speedtest-tracker:latest";
       autoStart = true;
@@ -17,17 +29,6 @@
         SPEEDTEST_SCHEDULE = "*/10 * * * *";
         PUBLIC_DASHBOARD = "true";
       };
-    };
-
-    nginx-proxy-manager = {
-      image = "jc21/nginx-proxy-manager:latest";
-      autoStart = true;
-      ports = [ "80:80" "81:81" "433:433" ];
-      volumes = [
-        "/var/lib/nginx-proxy-manager/data:/data"
-        "/var/lib/nginx-proxy-manager/letsencrypt:/etc/letsencrypt"
-        "/var/lib/nginx-proxy-manager/98-themepark-npm:/etc/cont-init.d/99-themepark"
-      ];
     };
   };
 }
