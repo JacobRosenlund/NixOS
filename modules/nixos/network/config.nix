@@ -19,10 +19,10 @@
   # Firewall options
     # Allowing:
     # - 80 = nginx
-    # - 8080 = Calibre
+    # - 8580 = Calibre
     # - 9090 = Minecraft
     # - 22 = SSH
     networking.firewall.enable = true;
-    networking.firewall.allowedTCPPorts = [ 80 8080 9090 22 ];
+    networking.firewall.allowedTCPPorts = [ 80 8580 9090 22 ];
     networking.firewall.allowedUDPPorts = [ 9090 ];
 }
