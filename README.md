@@ -36,8 +36,8 @@ flowchart LR
 	packages --- system-packages([**system-packages**])
 	packages --- user-packages([**user-packages**])
 	languages --- languages_files(Packges related to specific languages. They are split into language-specific directories for readability.)
-	system-packages --- system-packages_files(Packages that should be installed as "root" packages.)
-	user-packages --- user-packages_files(Packages that can be installed as "user" packages.)
+	system-packages --- system-packages_files(Packages that should be installed as root packages.)
+	user-packages --- user-packages_files(Packages that can be installed as user packages.)
 		
 	classDef leftAlign text-align:left;
 	class default_files,backgrounds_files,nixos_files,kanata_files,neovim_files,network_files,languages_files,system-packages_files,user-packages_files leftAlign;
