@@ -1,1 +1,2 @@
 modules/nixos/smb.nix
+smb-secrets
