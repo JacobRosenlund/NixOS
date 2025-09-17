@@ -31,6 +31,14 @@
 
   services.mpris-proxy.enable = true; # Control media players with bt devices
 
+  xdg.desktopEntries = {
+    i2p-browser = {
+      name = "i2p Browser";
+      genericName = "Web Browser";
+      exec = "${pkgs.mullvad-browser}/bin/mullvad-browser -p i2p";
+    };
+  };
+
   programs.home-manager.enable = true;  # Let HM install and manage itself
 
 }
