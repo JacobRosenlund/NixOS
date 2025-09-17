@@ -11,5 +11,6 @@
     lm_sensors        # Hardware sensor utility
     acpi              # Batter status and ACPI info
     wirelesstools     # Tools like `iwconfig`
+    # xsane             # Graphical scanning frontend for `sane`
   ];
 }

@@ -4,5 +4,6 @@
   environment.systemPackages = with pkgs; [
     pnpm
     nodejs_24
+    yarn
   ];
 }
