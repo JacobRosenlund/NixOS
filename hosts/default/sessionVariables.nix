@@ -11,6 +11,6 @@
     PICTURES = "$HOME/Pictures";
     TEMPLATES = "$HOME/Templates";
     VIDEOS = "$HOME/Videos";
-    HYPRSHOT_DIR = "$HOME/Pictures";
+    HYPRSHOT_DIR = "$HOME/Pictures/Hyprshot";
   };
 }
