@@ -11,6 +11,9 @@
  cec (tap-hold 100 100 esc lctrl)
  sym (tap-hold 200 200 tab (layer-toggle alternate))
  em (unicode "—")
+ tm (unicode "™")
+ cr (unicode "©")
+ rr (unicode "®")
 )
 
 (deflayer default
@@ -25,9 +28,9 @@
 (deflayer alternate
  lrld f13  f14  f15  f16  f17  f18  f19  f21  f22  f23  f24  _
  _    kp1  kp2  kp3  kp4  kp5  kp6  kp7  kp8  kp9  kp0  @em  _    _
- _    _    _    _    _    _    _    _    _    _    _    _    _
+ _    _    _    _    @rr  @tm  _    _    _    _    _    _    _
  caps _    _    _    _    _    left down up   rght _    _    _
- _    _    _    _    _    _    _    _    _    _    _    _
+ _    _    _    @cr  _    _    _    _    _    _    _    _
  _    _    _              _              _    _    _
 )	    
 

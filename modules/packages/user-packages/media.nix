@@ -5,6 +5,7 @@
     qimgv
     pavucontrol
     vlc
+    imhex
     koreader
     libreoffice
     obsidian
