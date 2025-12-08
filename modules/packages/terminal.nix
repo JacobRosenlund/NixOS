@@ -13,15 +13,16 @@
       man-pages-posix # Posix manual man-pages
 
     # Flavours (Make terminal tasty)
-      # zoxide    # Replace `cd`
-      eza       # Better `ls`
-      fzf       # Fuzzy finder
-      bat       # Replace `cat`
-      viddy     # Better `watch` command
-      lazygit   # Git manager
-      fd        # Replace `find`
-      starship  # Beautify terminal
-      tinyxxd     # vim hex dump replacement
+      # zoxide     # Replace `cd`
+      eza        # Better `ls`
+      fzf        # Fuzzy finder
+      bat        # Replace `cat`
+      bat-extras.batman # Extras for `bat`
+      viddy      # Better `watch` command
+      lazygit    # Git manager
+      fd         # Replace `find`
+      starship   # Beautify terminal
+      tinyxxd    # vim hex dump replacement
 
     # Tools (Useful terminal tools)
       tmux        # Terminal multiplexer
