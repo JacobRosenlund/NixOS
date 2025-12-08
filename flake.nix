@@ -1,7 +1,7 @@
 {
   description = "NixOS Config Flake";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/master";
 
     home-manager = { 
       url = "github:nix-community/home-manager";
@@ -9,6 +9,7 @@
     };
 
     stylix.url = "github:danth/stylix";
+    catppuccin.url = "github:catppuccin/nix";
 
     swww.url = "github:LGFae/swww";
   };
