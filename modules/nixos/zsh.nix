@@ -9,6 +9,7 @@
 
     interactiveShellInit = ''
     export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
+    eval "$(batman --export-env)"
     '';
 
     shellAliases = {
