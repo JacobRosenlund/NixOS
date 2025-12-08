@@ -10,7 +10,6 @@
     ../../modules/packages/user-packages/password-manager.nix
     ../../modules/packages/user-packages/reader.nix
     ../../modules/packages/user-packages/window-manager.nix
-
   ];
 
   home.username = "jacobr";
