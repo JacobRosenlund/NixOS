@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    angryipscanner
+    # angryipscanner
     nmap
     lsof
     wireshark
