@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    sdrpp
-    chirp
+    # sdrpp
+    # chirp
   ];
 }
