@@ -15,6 +15,7 @@
     ../../modules/nixos/cron.nix
     ../../modules/nixos/hyprland.nix
     ../../modules/nixos/ssh.nix
+    ../../modules/nixos/steam.nix
     ../../modules/nixos/syncthing.nix
     ../../modules/nixos/virtualisation.nix
     ../../modules/nixos/zoxide.nix
@@ -33,6 +34,9 @@
   # Graphics
     hardware.graphics.enable = true;  # Vulkan
     services.xserver.videoDrivers = [ "modesetting" ]; 
+  
+  # udev Rules
+    hardware.ledger.enable = true;
 
   # Gnome Virtual File System
     services.gvfs.enable = true;
