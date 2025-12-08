@@ -11,6 +11,7 @@
     ../../modules/packages/languages/sql.nix
     ../../modules/packages/system-packages/clipboard.nix
     ../../modules/packages/system-packages/device-manage.nix
+    ../../modules/packages/system-packages/espanso.nix
     ../../modules/packages/system-packages/file-managers.nix
     # ../../modules/packages/system-packages/ide.nix # Not needed at the moment
     ../../modules/packages/system-packages/network.nix
