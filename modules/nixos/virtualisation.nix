@@ -1,10 +1,31 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.guest.dragAndDrop = true;
+  virtualisation.libvirtd = {
+    enable = true;
+    
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = true;
+      swtpm.enable = true;
+      vhostUserPackages = with pkgs; [ virtiofsd ];
+    };
+  };
 
+  programs.virt-manager.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    iproute2
+    spice-gtk
+  ];
   
-  users.extraGroups.vboxusers.members = [ "jacobr" ];
+  # This is to enable USB passthrough
+  security.wrappers.spice-client-glib-usb-acl-helper = {
+    source = "${pkgs.spice-gtk}/bin/spice-client-glib-usb-acl-helper";
+    setuid = true;
+    owner = "root";
+    group = "root";
+  };
+
+  users.users.jacobr.extraGroups = [ "libvirtd" ];
 }
