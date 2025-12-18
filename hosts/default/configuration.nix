@@ -23,8 +23,24 @@
   ];
 
   # Boot loader
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
+    boot = {
+      loader = {
+        efi.canTouchEfiVariables = true;
+        grub = {
+          enable = true;
+          device = "nodev";
+          efiSupport = true;
+
+          darkmatter-theme = {
+            enable = true;
+            style = "nixos";
+            icon = "color";
+            resolution = "1080p";
+          };
+        };
+      };
+      kernelParams = [ "ahci.mobile_lpm_policy=0" ];
+    };
 
   # Time
     networking.timeServers = [ "0.north-america.pool.ntp.org" ]; 
