@@ -1,7 +1,10 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
   
   # Launch to hyprland
     services.greetd = {
