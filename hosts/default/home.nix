@@ -4,6 +4,7 @@
   imports = [
     ../../modules/packages/user-packages/creative.nix
     ../../modules/packages/user-packages/communication.nix
+    ../../modules/packages/user-packages/crypto.nix
     ../../modules/packages/user-packages/fonts.nix
     ../../modules/packages/user-packages/games.nix
     ../../modules/packages/user-packages/media.nix

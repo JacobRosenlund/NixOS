@@ -4,7 +4,7 @@
   stylix = {
     enable = true;
     targets.grub.enable = false;
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/helios.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/helios.yaml";
     cursor = {
       package = pkgs.posy-cursors;
       name = "Posy_Cursor_Mono_Black";
