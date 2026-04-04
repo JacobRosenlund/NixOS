@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     gimp
     audacity
-    kdePackages.kdenlive
+    # kdePackages.kdenlive
     obs-studio
   ];
 }

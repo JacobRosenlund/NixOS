@@ -4,6 +4,7 @@
   imports = [
     ../../modules/packages/terminal.nix
     ../../modules/packages/languages/cpp.nix
+    ../../modules/packages/languages/dotnet.nix
     ../../modules/packages/languages/java.nix
     ../../modules/packages/languages/javascript.nix
     ../../modules/packages/languages/lua.nix

@@ -8,18 +8,18 @@
     libinput          # Wayland input device handler
     brightnessctl     # Brightness control utility
     wl-gammarelay-rs  # Control display gamma
-    lz4               # Compression algorythm for `swww`
+    lz4               # Compression algorythm for `awww`
     lm_sensors        # Hardware sensor utility
     acpi              # Batter status and ACPI info
     wirelesstools     # Tools like `iwconfig`
     # xsane             # Graphical scanning frontend for `sane`
-    xorg.libX11
-    xorg.libXrender
-    xorg.libXtst
-    xorg.libXi
-    xorg.libXext
+    libX11
+    libXrender
+    libXtst
+    libXi
+    libXext
     wine
-    wineWowPackages.staging
+    wineWow64Packages.staging
     # virtualbox
   ];
 }

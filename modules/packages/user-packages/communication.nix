@@ -1,5 +1,5 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  home.packages = with pkgs; [ discord zoom-us ];
+  home.packages = with pkgs; [ tutanota-desktop zoom-us ];
 }

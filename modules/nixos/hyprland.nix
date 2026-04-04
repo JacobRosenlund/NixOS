@@ -3,6 +3,7 @@
 {
   programs.hyprland = {
     enable = true;
+    withUWSM = true;
     xwayland.enable = true;
   };
   
@@ -11,7 +12,7 @@
       enable = true;
       settings = rec {
         initial_session = {
-          command = "${pkgs.hyprland}/bin/hyprland";
+          command = "${pkgs.hyprland}/bin/start-hyprland";
           user = "jacobr";
         };
         default_session = initial_session;

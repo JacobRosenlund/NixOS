@@ -39,7 +39,6 @@
       hexyl       # Hex viewer for terminal
       glow        # Terminal Markdown renderer
       miller      # CSV renderer
-      yt-dlp      # Terminal YouTube toolkit
       platformio  # Embedded software toolkit
       esphome     # ESP32 HomeAssistant toolkit
       jq          # `sed` for JSON

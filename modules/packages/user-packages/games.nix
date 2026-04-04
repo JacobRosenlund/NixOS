@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    vintagestory
     modrinth-app
     retroarch
     xclicker

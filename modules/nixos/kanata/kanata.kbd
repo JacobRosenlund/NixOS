@@ -14,6 +14,8 @@
  tm (unicode "™")
  cr (unicode "©")
  rr (unicode "®")
+ lar (unicode "←")
+ rar (unicode "→")
 )
 
 (deflayer default
@@ -30,7 +32,7 @@
  _    kp1  kp2  kp3  kp4  kp5  kp6  kp7  kp8  kp9  kp0  @em  _    _
  _    _    _    _    @rr  @tm  _    _    _    _    _    _    _
  caps _    _    _    _    _    left down up   rght _    _    _
- _    _    _    @cr  _    _    _    _    _    _    _    _
+ _    _    _    @cr  _    _    _    _    @lar @rar _    _
  _    _    _              _              _    _    _
 )	    
 

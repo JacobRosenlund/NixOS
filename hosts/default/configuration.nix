@@ -14,6 +14,8 @@
     ../../modules/nixos/bluetooth.nix
     ../../modules/nixos/cron.nix
     ../../modules/nixos/hyprland.nix
+    ../../modules/nixos/printer-scanner.nix
+    ../../modules/nixos/security.nix
     ../../modules/nixos/ssh.nix
     ../../modules/nixos/steam.nix
     ../../modules/nixos/syncthing.nix
@@ -61,6 +63,7 @@
     nixpkgs.config.allowUnfree = true;
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     programs.nix-ld.enable = true; # Needed for Modrinth
+    nixpkgs.config.allowBroken = true;
 
   # Fonts
     fonts.fontDir.enable = true;
