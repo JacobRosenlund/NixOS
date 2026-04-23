@@ -7,7 +7,5 @@
     vlc
     imhex
     koreader
-    libreoffice
-    obsidian
   ];
 }

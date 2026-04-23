@@ -46,5 +46,20 @@
       extraOptions = [ "--network=pihole-net" ];
       ports = [ "127.0.0.1:8081:80" "127.0.0.1:53:53/tcp" "127.0.0.1:53:53/udp" ];
     };
+
+    homepage = {
+      image = "ghcr.io/gethomepage/homepage:latest";
+      autoStart = true;
+      ports = [ "127.0.0.1:3001:3000" ];
+      volumes = [
+        "/var/run/podman/podman.sock:/var/run/docker.sock:ro"
+        "/var/lib/homepage/config/:/app/config"
+        "/var/lib/homepage/images:/app/public/images"
+        "/var/lib/homepage/icons:/app/public/icons"
+      ];
+      environment = {
+        HOMEPAGE_ALLOWED_HOSTS = "*";
+      };
+    };
   };
 }
