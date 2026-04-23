@@ -3,6 +3,8 @@
 {
   imports = [ 
     ./containers/nginx-proxy-manager.nix
+    ./containers/pihole.nix
+    ./containers/speedtest-tracker.nix
   ];
 
   virtualisation.containers.enable = true;
