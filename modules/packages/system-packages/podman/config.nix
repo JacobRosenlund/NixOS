@@ -1,7 +1,9 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  imports = [ ./containers.nix ];
+  imports = [ 
+    ./containers/nginx-proxy-manager.nix
+  ];
 
   virtualisation.containers.enable = true;
   virtualisation = {
