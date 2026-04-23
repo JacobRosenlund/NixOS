@@ -2,9 +2,7 @@
 
 {
   imports = [ 
-    ./containers/nginx-proxy-manager.nix
-    ./containers/pihole.nix
-    ./containers/speedtest-tracker.nix
+    ./containers.nix
   ];
 
   virtualisation.containers.enable = true;
@@ -14,6 +12,7 @@
       dockerCompat = true;
       defaultNetwork.settings.dns_enabled = true;
     };
+    oci-containers.backend = "podman";
   };
 
   environment.systemPackages = with pkgs; [
