@@ -15,6 +15,7 @@
     ../../modules/nixos/cron.nix
     ../../modules/nixos/hyprland.nix
     ../../modules/nixos/printer-scanner.nix
+    ../../modules/nixos/searxng.nix
     ../../modules/nixos/security.nix
     ../../modules/nixos/ssh.nix
     ../../modules/nixos/steam.nix

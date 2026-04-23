@@ -18,7 +18,7 @@
   
   home.stateVersion = "25.11";
 
-  gtk.iconTheme = {
+ gtk.iconTheme = {
     package = pkgs.papirus-icon-theme;
     name = "Papirus";
   };
