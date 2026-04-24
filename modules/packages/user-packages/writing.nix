@@ -1,7 +1,9 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  obsidian
-  libreoffice
-  languagetool
+  home.packages = with pkgs; [
+    obsidian
+    libreoffice
+    harper
+  ];
 }

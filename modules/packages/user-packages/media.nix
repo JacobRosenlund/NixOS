@@ -6,6 +6,5 @@
     pavucontrol
     vlc
     imhex
-    koreader
   ];
 }
