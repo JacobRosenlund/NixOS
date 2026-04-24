@@ -60,6 +60,21 @@
       environment = {
         HOMEPAGE_ALLOWED_HOSTS = "*";
       };
+
+      environmentFiles = [ /var/lib/homepage/.env ];
+    };
+
+    freshrss = {
+      image= "freshrss/freshrss:latest";
+      autoSTart = true;
+      ports = [ "127.0.0.1:8580:80" ];
+      volumes = [
+        "/var/lib/freshrss/data:/var/www/FreshRSS/data"
+        "/var/lib/freshrss/extensions:/var/www/FreshRSS/extensions"
+      ];
+      environment = {
+        TZ = "America/Denver";
+      };
     };
   };
 }
