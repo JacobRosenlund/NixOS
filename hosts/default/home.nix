@@ -4,13 +4,13 @@
   imports = [
     ../../modules/packages/user-packages/creative.nix
     ../../modules/packages/user-packages/communication.nix
-    ../../modules/packages/user-packages/crypto.nix
     ../../modules/packages/user-packages/fonts.nix
     ../../modules/packages/user-packages/games.nix
     ../../modules/packages/user-packages/media.nix
     ../../modules/packages/user-packages/password-manager.nix
     ../../modules/packages/user-packages/reader.nix
     ../../modules/packages/user-packages/window-manager.nix
+    ../../modules/packages/user-packages/writing.nix
   ];
 
   home.username = "jacobr";
