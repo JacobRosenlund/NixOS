@@ -8,9 +8,13 @@
   ];
 
   # General Network
-     networking.hostName = "nixos";            # This system's hostname
-     networking.networkmanager.enable = true;  # System for configurng network
-     networking.nameservers = [ "127.0.0.1" ];
+    networking = {
+      hostName = "nixos";     # The System's hostname
+      nftables.enable = true;
+      networkmanager.enable = true;
+      nameservers = [ "127.0.0.1" ];
+    };
+
      services.resolved.enable = true;
      services.avahi = {
        enable = true;        # mDNS Service
