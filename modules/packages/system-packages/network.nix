@@ -5,7 +5,9 @@
     # angryipscanner
     nmap
     lsof
-    wireshark
     angryoxide
   ];
+
+  programs.wireshark.enable = true;
+  users.users.jacobr.extraGroups = [ "wireshark" ];
 }
