@@ -5,6 +5,7 @@
     ./asus-usbax56.nix
     ./vpn.nix
     ./i2p.nix
+    ./mac-spoofing.nix
   ];
 
   # General Network
@@ -22,7 +23,6 @@
        openFirewall = true;  # Opens port for mDNS
        # interfaces = [ ];
      };
-
 
   # Firewall options
      # Allowing:
