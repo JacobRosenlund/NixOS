@@ -6,7 +6,7 @@
     ../../modules/packages/languages/cpp.nix
     ../../modules/packages/languages/dotnet.nix
     ../../modules/packages/languages/java.nix
-    ../../modules/packages/languages/javascript.nix
+    # ../../modules/packages/languages/javascript.nix
     ../../modules/packages/languages/lua.nix
     ../../modules/packages/languages/python.nix
     ../../modules/packages/languages/sql.nix
@@ -15,6 +15,7 @@
     ../../modules/packages/system-packages/espanso.nix
     ../../modules/packages/system-packages/file-managers.nix
     # ../../modules/packages/system-packages/ide.nix # Not needed at the moment
+    ../../modules/packages/system-packages/mouse.nix
     ../../modules/packages/system-packages/network.nix
     ../../modules/packages/system-packages/radio.nix
     ../../modules/packages/system-packages/rpi.nix
