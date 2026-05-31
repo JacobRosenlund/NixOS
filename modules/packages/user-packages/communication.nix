@@ -1,5 +1,8 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-  home.packages = with pkgs; [  zoom-us session-desktop ];
+  home.packages = with pkgs; [
+    zoom-us
+    session-desktop
+  ];
 }

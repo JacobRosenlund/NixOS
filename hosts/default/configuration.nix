@@ -48,7 +48,7 @@
   # Time
     networking.timeServers = [ "0.north-america.pool.ntp.org" ]; 
     services.ntp.enable = true;
-    time.timeZone = "America/Denver";
+    time.timeZone = "America/Anchorage";
   
   # Graphics
     hardware.graphics.enable = true;  # Vulkan
